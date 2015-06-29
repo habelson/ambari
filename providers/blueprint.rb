@@ -17,7 +17,7 @@ action :create do
   if resp.code == '201' then
     Chef::Log.info "Blueprint '#{new_resource.name}' created"
   elsif resp.code == '409' then
-    Chef::Log.warn "Blueprint already exists"
+    Chef::Log.info "Blueprint already exists"
   else
     resp_body = JSON.parse(resp.body)
 	Chef::Log.error "#{resp_body['status']}:#{resp_body['message']}"

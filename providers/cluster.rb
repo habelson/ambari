@@ -11,14 +11,14 @@ action :create do
   request.basic_auth(new_resource.username,new_resource.password)
   request.add_field("X-Requested-By", "ambari-cookbook")
   request.body = new_resource.json
-  Chef::Log.warn "request json: #{request.body}"
+  Chef::Log.debug "request json: #{request.body}"
   
   resp = http.request(request)
-  Chef::Log.warn "response code: #{resp.code}"
+  Chef::Log.debug "response code: #{resp.code}"
   if resp.code == '202' then
-    Chef::Log.warn "Cluster '#{new_resource.name}' created"
+    Chef::Log.info "Cluster '#{new_resource.name}' created"
   elsif resp.code == '409' then
-    Chef::Log.warn "Cluster already exists"
+    Chef::Log.info "Cluster already exists"
   else
     resp_body = JSON.parse(resp.body)
 	Chef::Log.error "#{resp_body['status']}:#{resp_body['message']}"
@@ -37,9 +37,9 @@ action :delete do
   request.add_field("X-Requested-By", "ambari-cookbook")
   
   resp = http.request(request)
-  Chef::Log.warn "response code: #{resp.code}"
+  Chef::Log.debug "response code: #{resp.code}"
   if resp.code == '200' then
-    Chef::Log.warn "Cluster '#{new_resource.name}' deleted"
+    Chef::Log.info "Cluster '#{new_resource.name}' deleted"
   else
     resp_body = JSON.parse(resp.body)
 	Chef::Log.error "#{resp_body['status']}:#{resp_body['message']}"

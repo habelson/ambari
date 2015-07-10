@@ -50,7 +50,7 @@ when "suse"
   end
 when "ubuntu"
   apt_repository 'Ambari' do
-    uri node['ambari']['ubuntu_12_repo'] 
+    uri node['ambari']['ubuntu_12_repo']
     distribution 'Ambari'
     components ['main']
     keyserver    'hkp://keyserver.ubuntu.com:80'

@@ -22,7 +22,7 @@ when "2.0", "2"
 when "2.1"
   default['ambari']['rhel_6_repo'] = "http://s3.amazonaws.com/dev.hortonworks.com/ambari/centos6/2.x/BUILDS/2.1.0-1409/ambaribn.repo"
   default['ambari']['rhel_7_repo'] = "http://s3.amazonaws.com/dev.hortonworks.com/ambari/centos7/2.x/BUILDS/2.1.0-1409/ambaribn.repo"
-  default['ambari']['ubuntu_12_repo'] = "http://s3.amazonaws.com/dev.hortonworks.com/ambari/ubuntu12/2.x/BUILDS/2.1.0-1409/ambaribn.list"
+  default['ambari']['ubuntu_12_repo'] = "http://s3.amazonaws.com/dev.hortonworks.com/ambari/ubuntu12/2.x/BUILDS/2.1.0-1409"
 end
 
 default['ambari']['admin_user'] = "admin"

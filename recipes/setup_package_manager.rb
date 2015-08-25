@@ -32,7 +32,7 @@ end
 
 
 case node['platform']
-when "redhat","centos","amazon","scientific"
+when "redhat","centos","scientific"
   case node['platform_version'].to_i
   when 5
     yum_repo = node['ambari']['rhel_5_repo']
@@ -45,6 +45,12 @@ when "redhat","centos","amazon","scientific"
     source yum_repo
     not_if { ::File.exists?("/etc/yum.repos.d/ambari.repo") }
   end
+when "amazon"
+    yum_repo = node['ambari']['rhel_6_repo']
+	remote_file "/etc/yum.repos.d/ambari.repo" do
+		source yum_repo
+		not_if { ::File.exists?("/etc/yum.repos.d/ambari.repo") }
+	end
 when "suse"
   remote_file "/etc/zypp/repos.d/ambari.repo" do
     source node['ambari']['suse_11_repo']

@@ -20,9 +20,9 @@ when "2.0", "2"
   default['ambari']['suse_11_repo'] = "http://public-repo-1.hortonworks.com/ambari/suse11/2.x/updates/2.0.1/ambari.repo"
   default['ambari']['ubuntu_12_repo'] = "http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.0.1"
 when "2.1"
-  default['ambari']['rhel_6_repo'] = "http://s3.amazonaws.com/dev.hortonworks.com/ambari/centos6/2.x/BUILDS/2.1.0-1409/ambaribn.repo"
-  default['ambari']['rhel_7_repo'] = "http://s3.amazonaws.com/dev.hortonworks.com/ambari/centos7/2.x/BUILDS/2.1.0-1409/ambaribn.repo"
-  default['ambari']['ubuntu_12_repo'] = "http://s3.amazonaws.com/dev.hortonworks.com/ambari/ubuntu12/2.x/BUILDS/2.1.0-1409"
+  default['ambari']['rhel_6_repo'] = "http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.1.0/ambari.repo"
+  default['ambari']['rhel_7_repo'] = "http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.1.0/ambari.repo"
+  default['ambari']['ubuntu_12_repo'] = "http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.1.0"
 end
 
 default['ambari']['admin_user'] = "admin"

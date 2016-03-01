@@ -1,18 +1,19 @@
 Ambari Cookbook
 ===============
+![Travis CI status](https://travis-ci.org/jp/ambari.svg)
 
-Installs ambari-server and ambari-agent in order to provision a cluster with the Hortonworks Data Platform.  This cookbook also supports provisioning supported services through the Ambari API via Ambari Blueprints.  For more on blueprints, please refer to the Apache project's documentation [here](https://cwiki.apache.org/confluence/display/AMBARI/Blueprints).
+Install ambari-server and ambari-agent in order to provision a cluster with the Hortonworks Data Platform.  This cookbook also supports provisioning supported services through the Ambari API via Ambari Blueprints.  For more on blueprints, please refer to the Apache project's documentation [here](https://cwiki.apache.org/confluence/display/AMBARI/Blueprints).
 
-Supports Ambari 1.7 and 2.0.
+Supports Ambari 1.7, 2.0,, 2.1 and 2.2.
 
 Requirements
 ------------
 Supports all OS distributions and versions supported by Ambari.
 
-- RHEL, CentOS, and Oracle Linux 5
-- RHEL, CentOS, and Oracle Linux 6
+- RHEL, CentOS, and Oracle Linux 5, 6, and 7.
 - Suse 11
-- Ubuntu 12.04
+- Ubuntu 12 and 14.
+- Debian 7
 
 Usage
 -----
@@ -33,7 +34,7 @@ Include `ambari::server` in your node's `run_list`:
 
 Include `ambari::agent` in your node's `run_list` (all the nodes of your cluster):
 
-The Ambari Server will be automatically detected, but you can override this detection using the attribute `node['ambari']['server']['fdqn']`.
+The Ambari Server will be automatically detected, but you can override this detection using the attribute `node['ambari']['server_fqdn']`.
 
 ```json
 {
